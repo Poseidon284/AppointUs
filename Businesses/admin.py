@@ -1,6 +1,5 @@
 from django.contrib import admin
-from Businesses.models import Business, Service
+from .models import Business_User
 
 # Register your models here.
-admin.site.register(Business)
-admin.site.register(Service)
+admin.site.register(Business_User)

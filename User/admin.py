@@ -1,5 +1,5 @@
 from django.contrib import admin
-from User.models import Booking
+from .models import CommonUser
 
 # Register your models here.
-admin.site.register(Booking)
+admin.site.register(CommonUser)
