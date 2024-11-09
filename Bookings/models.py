@@ -15,7 +15,7 @@ class Booking(models.Model):
     booking_user = models.ForeignKey(CommonUser,on_delete=models.CASCADE, related_name='booked_user')
     booking_date = models.DateField()
     booking_time = models.TimeField()
-    price = models.DecimalField(max_digits=10, decimal_places=2)
+    # price = models.DecimalField(max_digits=10, decimal_places=2)
     
     status = models.CharField(
         max_length=20,
