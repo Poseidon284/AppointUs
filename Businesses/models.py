@@ -12,7 +12,7 @@ class Business_User(models.Model):
     phone = models.CharField(max_length=20)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    # slug = models.SlugField(unique=True, blank=False, null=False)
+    slug = models.SlugField(default="", null=False)
 
     class Meta:
         ordering = ['name']

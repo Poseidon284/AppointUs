@@ -10,8 +10,8 @@ class BookingStatus(models.TextChoices):
     CANCELED = 'Canceled', 'Canceled'
 
 class Booking(models.Model):
-    service_name = models.OneToOneField(Service, on_delete=models.CASCADE, related_name='booked_service') 
-    business = models.OneToOneField(Business_User, on_delete=models.CASCADE, related_name='offered_by') 
+    service_name = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='booked_service') 
+    business = models.ForeignKey(Business_User, on_delete=models.CASCADE, related_name='offered_by') 
     booking_user = models.ForeignKey(CommonUser,on_delete=models.CASCADE, related_name='booked_user')
     booking_date = models.DateField()
     booking_time = models.TimeField()
@@ -28,7 +28,6 @@ class Booking(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def set_status(self, new_status):
-        # Define allowed status transitions
         allowed_transitions = {
             BookingStatus.PENDING: [BookingStatus.CONFIRMED, BookingStatus.CANCELED],
             BookingStatus.CONFIRMED: [BookingStatus.COMPLETED, BookingStatus.CANCELED],
