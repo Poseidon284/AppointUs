@@ -1,0 +1,9 @@
+.section3 {
+  width: 97%;
+  display: flex;
+
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px;
+}

@@ -4,15 +4,15 @@ from Businesses.models import Business_User
 class ServiceStatus(models.TextChoices):
     CARPENTRY = ('Carpentry', 'Carpentry')
     PLUMBING = ('Plumbing', 'Plumbing')
-    SALON = ('SALON/SPA','SALON/SPA')
-    MEDICAL = ('MEDICAL','MEDICAL')
-    OTHER = ('OTHER','OTHER')
+    SALON = ('Salon/Spa','Salon/Spa')
+    MEDICAL = ('Medical','Medical')
+    OTHER = ('Other','Other')
 
 class ServiceType(models.TextChoices):
     HOME_SERVICE = ('Home-Service','Home-Service')
     IN_SHOP = ('Shop','Shop')
     ITEM_PURCHASE = ('Item','Item')
-    OTHER = ('OTHER','OTHER')
+    OTHER = ('Other','Other')
 
 # Create your models here.
 class Service(models.Model):

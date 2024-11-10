@@ -1,0 +1,116 @@
+.main1 {
+  position: relative;
+  width: 100%;
+  height: 110vh;
+  overflow: hidden;
+}
+
+.video-grid1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  width: 100%;
+  height: 200px;
+}
+.video-grid12 {
+  display: none;
+}
+
+.video-bg1 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.wrapper {
+  display: grid;
+  place-items: center;
+  margin-top: -190px;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.typing-demo {
+  width: 32ch;
+  animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: "Libre Bodoni", serif;
+  font-optical-sizing: auto;
+  font-size: 2em;
+  color: white;
+}
+.getstartedbutton {
+  position: relative;
+  height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .content {
+    display: none;
+  }
+  .wrapper {
+    display: grid;
+    place-items: center;
+    margin-top: -190px;
+  }
+  .video-grid12 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 100%;
+    height: 200px;
+  }
+  .video-bg12 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  .typing-demo {
+    width: 35ch;
+    animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+    white-space: wrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: "Notable", sans-serif;
+    font-size: 1em;
+  }
+  .video-grid1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 100%;
+    height: 200px;
+  }
+
+  .video-bg1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .main1 {
+    position: relative;
+    width: 100%;
+    height: 85vh;
+    overflow: hidden;
+  }
+}
