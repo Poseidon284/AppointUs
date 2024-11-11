@@ -1,44 +1,33 @@
-from django.shortcuts import render
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
+from django.http import JsonResponse
+from django.contrib.auth.models import User
+from rest_framework.views import APIView
 from rest_framework import status
-from rest_framework.permissions import AllowAny
-from rest_framework.authtoken.models import Token
 
-# Create your views here.
 class LoginView(APIView):
-    permission_classes = [AllowAny] 
-    
-    def get(self, request):
-        print(request.data)
-        return Response({"message": "GET requests are not used for login"}, status=status.HTTP_405_METHOD_NOT_ALLOWED)
-    
-    def post(self, request):
-        # Existing POST logic
-        username = request.data.get("username")
+    def post(self, request, *args, **kwargs):
+        email = request.data.get("email")
         password = request.data.get("password")
         
-        if not username or not password:
-            return Response(
-                {"error": "Username and password are required"},
-                status=status.HTTP_400_BAD_REQUEST
-            )
-
-        user = authenticate(username=username, password=password)
+        user = authenticate(request, username=email, password=password)
         
         if user is not None:
-            token, created = Token.objects.get_or_create(user=user)
-            return Response(
-                {
-                    "message": "Login successful",
-                    "token": token.key
-                },
-                status=status.HTTP_200_OK
-            )
+            return JsonResponse({"message": "Login successful", "user_id": user.id}, status=status.HTTP_200_OK)
         else:
-            return Response(
-                {"error": "Invalid credentials"},
-                status=status.HTTP_401_UNAUTHORIZED
-            )
+            return JsonResponse({"message": "Invalid username or password"}, status=status.HTTP_400_BAD_REQUEST)
+
+class SignupView(APIView):
+    def post(self, request, *args, **kwargs):
+        username = request.data.get("username")
+        email = request.data.get("email")
+        password = request.data.get("password")
+
+        try:
+            if User.objects.filter(email=email).exists():
+                return JsonResponse({"message":"Email already exists"}, status=status.HTTP_400_BAD_REQUEST )
+            user = User.objects.create_user(username, email, password)
+            user.first_name = username
+        except:
+            return JsonResponse({"message":"Username already exists"}, status=status.HTTP_400_BAD_REQUEST )
+
+        return JsonResponse({"message":f"Welcome to AppointUS {username}"}, status=status.HTTP_201_CREATED)

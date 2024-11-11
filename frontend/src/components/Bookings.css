@@ -1,0 +1,117 @@
+/* Bookings.css */
+.bookings-container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.image-container {
+  flex: 1;
+  max-width: 500px;
+}
+
+.form-image {
+  height: 570px;
+  width: 450px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bookings-form {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.bookings-form label {
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-family: "League Spartan", sans-serif;
+  font-size: 12px;
+  color: #333;
+}
+
+.bookings-form input,
+.bookings-form select,
+.bookings-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bookings-form input:focus,
+.bookings-form select:focus,
+.bookings-form textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+.bookings-form textarea {
+  resize: vertical;
+  min-height: 80px;
+  max-height: 200px;
+}
+
+.bookings-form button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  border: 1px solid black;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 123, 255, 0.3);
+}
+
+.bookings-form button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.bookings-form button:active {
+  transform: translateY(0);
+}
+
+.bookings-form input::placeholder,
+.bookings-form textarea::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+@media (max-width: 800px) {
+  .bookings-container {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .form-image {
+    width: 80%;
+    max-width: 350px;
+    margin-bottom: 20px;
+  }
+
+  .bookings-form {
+    padding: 15px;
+  }
+
+  .bookings-form button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}

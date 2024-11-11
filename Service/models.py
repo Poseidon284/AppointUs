@@ -4,7 +4,9 @@ from Businesses.models import Business_User
 class ServiceStatus(models.TextChoices):
     CARPENTRY = ('Carpentry', 'Carpentry')
     PLUMBING = ('Plumbing', 'Plumbing')
-    SALON = ('Salon/Spa','Salon/Spa')
+    ELECTRICIAN = ('Electrician','Electrician')
+    MASONRY = ('Masonry','Masonry')
+    SALON = ('Salon','Salon')
     MEDICAL = ('Medical','Medical')
     OTHER = ('Other','Other')
 

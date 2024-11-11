@@ -1,0 +1,94 @@
+/* Container for the hero component */
+.hero-container1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  width: 95%; /* Adjust based on your layout needs */
+  margin: auto;
+  flex-wrap: wrap; /* Ensures content wraps on smaller screens */
+}
+
+/* Text section styling */
+.text-section1 {
+  flex: 1;
+  padding: 20px;
+  margin-right: 20px;
+  border-radius: 10px;
+
+  text-align: center;
+  font-family: "League Spartan", sans-serif;
+}
+h2 {
+  font-size: 45px;
+}
+
+/* Button styling */
+.get-started-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid black;
+  background-color: white;
+  font-size: 0.9rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+  margin-top: 24px;
+  margin-right: 10px;
+}
+
+.get-started-btn:hover {
+  background-color: rgb(264, 153, 0, 0.9);
+}
+p {
+  font-size: 20px;
+}
+/* Image section styling */
+.image-section1 {
+  flex: 1;
+  padding: 20px;
+  border-radius: 10px;
+  height: 500px;
+  width: 500px;
+
+  text-align: center;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For medium screens (tablet) */
+@media screen and (max-width: 768px) {
+  .hero-container1 {
+    flex-direction: column; /* Stacks elements vertically */
+    padding: 15px;
+  }
+
+  .text-section1,
+  .image-section1 {
+    flex: none; /* Prevents sections from stretching */
+    margin-right: 0; /* Removes extra margin */
+    width: 100%; /* Full width */
+  }
+
+  .get-started-btn {
+    font-size: 14px; /* Adjust button size */
+    padding: 8px 16px;
+  }
+}
+
+/* For small screens (mobile) */
+@media screen and (max-width: 480px) {
+  .hero-container1 {
+    padding: 10px;
+  }
+
+  .text-section1,
+  .image-section1 {
+    padding: 15px;
+  }
+
+  .get-started-btn {
+    font-size: 12px; /* Adjust button size for smaller screens */
+    padding: 6px 12px;
+  }
+}

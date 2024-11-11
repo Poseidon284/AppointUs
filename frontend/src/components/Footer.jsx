@@ -1,65 +1,67 @@
 import React from "react";
-import "./Footer.css"; // Import the CSS file for the footer
-import imageeleven from "./Assets/imageeleven.gif";
+import "./Footer.css";
+import logo from "../assets/LOGO.png";
 
 const Footer = () => {
   return (
-    <footer className="footer-container2">
-      <div className="footer-content2">
-        <div className="footer-image2">
-          <img
-            src={imageeleven}
-            alt="Appointus Logo"
-            className="footer-logo2"
-          />
+    <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-logo">
+          <img src={logo} alt="Company Logo" className="footer-logo-image" />
         </div>
-        <div className="footer-links2">
-          <h4>Quick Links</h4>
-          <ul>
-            <li>
-              <a href="/Home" className="footer-link2">
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="/About" className="footer-link2">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="/Login" className="footer-link2">
-                Login
-              </a>
-            </li>
-            <li>
-              <a href="/Signup" className="footer-link2">
-                Sign Up
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div className="footer-contact2">
-          <h4>Contact Us</h4>
-          <p>Email: support@appointus.com</p>
-          <p>Phone: +123 456 7890</p>
-        </div>
-        <div className="footer-social2">
-          <h4>Follow Us</h4>
-          <div className="social-icons2">
-            <a href="#" className="social-icon2">
+        <div className="footer-content">
+          <div className="footer-links">
+            <a href="#about" className="footer-link">
+              About Us
+            </a>
+            <a href="#services" className="footer-link">
+              Services
+            </a>
+            <a href="#contact" className="footer-link">
+              Contact
+            </a>
+            <a href="#privacy" className="footer-link">
+              Privacy Policy
+            </a>
+          </div>
+          <div className="footer-socials">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-icon"
+            >
               Facebook
             </a>
-            <a href="#" className="social-icon2">
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-icon"
+            >
               Twitter
             </a>
-            <a href="#" className="social-icon2">
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-icon"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-social-icon"
+            >
               Instagram
             </a>
           </div>
         </div>
       </div>
-      <div className="footer-bottom2">
-        <p>&copy; 2024 Appointus. All Rights Reserved.</p>
+      <div className="footer-bottom">
+        <p className="footer-text">© 2024 Your Company. All rights reserved.</p>
       </div>
     </footer>
   );

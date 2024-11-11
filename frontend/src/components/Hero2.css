@@ -1,0 +1,85 @@
+.hero2 {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Adjust height based on preference */
+  background-size: cover;
+  background-position: center;
+
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  font-family: "League Spartan", sans-serif;
+}
+
+.hero-overlay2 {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Darken the background */
+}
+
+.hero-content2 {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Title Styling */
+.hero-title2 {
+  font-size: 3rem; /* Adjust font size as needed */
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.2;
+  letter-spacing: 1px; /* Slight spacing for a more polished look */
+}
+
+/* Subtitle Styling */
+.hero-subtitle2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+  font-style: italic; /* Add an italic style for differentiation */
+}
+
+/* Content Text Styling */
+.hero-text2 {
+  font-size: 1.125rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Slightly lighter text for a refined look */
+}
+
+/* Optional Media Query for responsiveness */
+@media screen and (max-width: 768px) {
+  .hero2 {
+    height: 350px; /* Adjust height for smaller screens */
+  }
+
+  .hero-title2 {
+    font-size: 2.5rem; /* Adjust title size */
+  }
+
+  .hero-subtitle2 {
+    font-size: 1.25rem; /* Adjust subtitle size */
+  }
+
+  .hero-text2 {
+    font-size: 1rem; /* Adjust content text size */
+  }
+}

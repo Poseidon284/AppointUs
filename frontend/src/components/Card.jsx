@@ -1,24 +1,19 @@
 import React from "react";
 import "./Card.css";
 
-function Card() {
+const Card = ({ image, title, description, buttonText, buttonLink }) => {
   return (
-    <div className="card-container">
-      <div className="image-part">
-        <img
-          src="Carpenter.jpg"
-          className="card-image"
-          alt="Carpenter Image"
-        ></img>
-      </div>
-      <div className="content-part">
-        <p>
-          Carpenter: Select from the top and most reliable carpenters in town.
-        </p>
-        <button className="action-button">Learn More</button>
+    <div className="card">
+      <img src={image} alt={title} className="card-image" />
+      <div className="card-content">
+        <h3 className="card-title">{title}</h3>
+        <p className="card-description">{description}</p>
+        <a href={buttonLink} className="card-button">
+          {buttonText}
+        </a>
       </div>
     </div>
   );
-}
+};
 
 export default Card;

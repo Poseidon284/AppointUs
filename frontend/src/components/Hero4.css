@@ -1,0 +1,101 @@
+.hero-section4 {
+  padding: 3rem 1.5rem;
+  background-color: #f8f9fa;
+  text-align: center;
+  border-bottom: 2px solid #dee2e6;
+}
+.social-icons4 {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-link4 {
+  color: #333;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link4:hover {
+  color: #0073e6;
+  transform: scale(1.1);
+}
+
+.container4 {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.company-name4 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #343a40;
+  margin-bottom: 1rem;
+}
+
+.company-details4 {
+  font-size: 1.1rem;
+  color: #495057;
+}
+
+.address4,
+.contact4 {
+  margin-bottom: 0.5rem;
+}
+
+.ratings4 {
+  font-weight: 600;
+  color: #28a745;
+}
+
+#hero4-contact-btn {
+  background-color: white;
+  margin-left: -19px;
+  margin-right: 25px;
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border: 0.5px solid black;
+  border-radius: 9px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+#hero4-contact-btn2 {
+  background-color: white;
+  margin-left: -19px;
+
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border: 0.5px solid black;
+  border-radius: 9px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+#hero4-contact-btn:hover {
+  background-color: #005bb5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#hero4-contact-btn:active {
+  background-color: #004494;
+  transform: translateY(0);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+#hero4-contact-btn2:hover {
+  background-color: #005bb5;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#hero4-contact-btn2:active {
+  background-color: #004494;
+  transform: translateY(0);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}

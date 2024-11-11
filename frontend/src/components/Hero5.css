@@ -1,0 +1,91 @@
+/* Hero5 Section */
+.hero5-section {
+  padding: 4rem 1.5rem;
+  background-color: #f9f9f9;
+  font-family: "League Spartan", sans-serif; /* Applying League Spartan font */
+  text-align: center;
+}
+
+.hero5-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Title and Description */
+.hero5-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.hero5-description {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Expertise Section */
+.hero5-services {
+  margin-bottom: 2rem;
+}
+
+.hero5-subtitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.hero5-services-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.hero5-services-list li {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 0.7rem;
+}
+
+/* Experience Section */
+.hero5-experience {
+  margin-bottom: 2rem;
+}
+
+.hero5-experience-description {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Social Media Section */
+.hero5-social-media {
+  margin-top: 3rem;
+}
+
+.hero5-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.hero5-icon {
+  font-size: 2rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.hero5-icon:hover {
+  color: #007bff;
+}
+.sectionmap {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  padding: 5px;
+}

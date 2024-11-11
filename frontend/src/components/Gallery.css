@@ -1,0 +1,33 @@
+/* Gallery container styling */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+/* Each gallery item styling */
+.gallery-item {
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Image styling */
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Hover effect for subtle professionalism */
+.gallery-item:hover {
+  transform: scale(1.03);
+}

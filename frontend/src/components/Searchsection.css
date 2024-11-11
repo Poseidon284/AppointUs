@@ -1,0 +1,92 @@
+/* Container for the hero section */
+.hero-container {
+  display: flex;
+  width: 90%;
+  justify-content: center;
+  min-height: 50vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.search-box {
+  max-width: 900px;
+  height: 200px;
+  width: 100%;
+  padding: 40px;
+
+  border-radius: 10px;
+}
+
+/* Main heading */
+.hero-heading {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #333;
+  font-family: "League Spartan", sans-serif;
+}
+
+/* Subheading for additional context */
+.hero-subheading {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+/* Search bar styling */
+.search-bar {
+  display: flex;
+  border: 1px solid #ddd;
+
+  overflow: hidden;
+}
+
+/* Search input field */
+.search-input {
+  flex: 1;
+  padding: 12px 16px;
+  width: 600px;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Search button styling */
+.search-button {
+  padding: 12px 20px;
+  background-color: black;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.search-button:hover {
+  background-color: #005bb5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-heading {
+    font-size: 2rem;
+  }
+
+  .hero-subheading {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-box {
+    padding: 30px;
+  }
+
+  .hero-heading {
+    font-size: 1.8rem;
+  }
+
+  .hero-subheading {
+    font-size: 0.8rem;
+  }
+}

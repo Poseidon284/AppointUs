@@ -1,249 +1,204 @@
+/* Global reset for consistent styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar container styling */
 .navbar {
-  background: black;
-  height: 80px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
-  position: sticky;
-  top: 0;
-  z-index: 999;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 95%;
 }
 
-.navbar-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80px;
-  max-width: 1500px;
-}
-
-.navbar-logo {
-  color: #fff;
-  justify-self: start;
-  margin-left: 20px;
+/* Logo styling */
+.logo {
+  height: 50px;
   cursor: pointer;
-  text-decoration: none;
-  font-size: 2rem;
+}
+
+/* Logo name styling */
+.logoname {
+  font-family: "League Spartan", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
   display: flex;
   align-items: center;
-  font-family: "Notable", sans-serif;
+  gap: 0.5rem;
 }
 
-.fa-typo3 {
-  margin-left: 0.5rem;
-  font-size: 1.8rem;
-}
-
-.nav-menu {
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  grid-gap: 10px;
+/* Navbar menu container */
+.navbar-menu {
+  display: flex;
   list-style: none;
-  text-align: center;
-  width: 60vw;
-  justify-content: end;
-  margin-right: 2rem;
+  gap: 2rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.nav-item {
-  height: 80px;
+/* Navbar menu items */
+.navbar-menu li {
+  text-transform: capitalize;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s;
 }
 
-.nav-links {
-  color: #fff;
+.navbar-menu li:hover {
+  color: #007bff;
+}
+
+/* Navbar right-side container */
+.navbar-right {
   display: flex;
   align-items: center;
-  text-decoration: none;
+  gap: 1.5rem;
+}
+
+/* Search container */
+.search-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 0.2rem 0.5rem;
+  border-radius: 40px;
+  background-color: #f9f9f9;
+}
+
+/* Search input */
+.search-input2 {
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  background: transparent;
+  width: 350px;
+}
+
+/* Remove underlines from links and button links */
+Link,
+.link-button,
+a {
+  text-decoration: none !important; /* Ensure no underline on all links */
+}
+
+/* Search icon */
+.search-icon {
+  height: 20px;
+  margin-left: 0.3rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+/* Navbar services icon */
+.navbar-services-icon img {
+  height: 20px;
+  cursor: pointer;
+}
+
+.navbar-search-icon:hover img {
+  transform: scale(1.1);
+}
+/* Remove underlines from links and button links */
+Link,
+.link-button,
+a {
+  text-decoration: none !important; /* Ensure no underline on all links */
+  transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and transform */
+}
+
+/* Hover effect for links */
+Link:hover,
+.link-button:hover,
+a:hover {
+  color: #007bff; /* Change color on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+/* Dot styling */
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* Sign-in button styling */
+button {
   padding: 0.5rem 1rem;
-  height: 75%;
+  border: 1px solid black;
+  background-color: white;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
-.nav-links:hover {
-  border-bottom: 4px solid #fff;
-  transition: all 0.2s ease-out;
+button:hover {
+  background-color: rgb(264, 153, 0, 0.9);
+  border-color: #0056b3;
 }
 
-.fa-bars {
-  color: #fff;
-}
-
-.nav-links-mobile {
+/* Login icon styling (small screen) */
+.login-icon {
   display: none;
+  height: 25px;
+  cursor: pointer;
 }
 
-.menu-icon {
-  display: none;
-}
-
-@media screen and (max-width: 960px) {
-  .NavbarItems {
-    position: relative;
-  }
-
-  .nav-menu {
-    display: flex;
+/* Media Query for Tablets and Smaller Screens */
+@media (max-width: 768px) {
+  .navbar {
     flex-direction: column;
-    width: 90%;
-    height: 90vh;
-    position: absolute;
-    top: 80px;
-    left: -100%;
-    opacity: 1;
-    transition: all 0.5s ease;
-    justify-content: start;
+    align-items: center;
   }
 
-  .nav-menu.active {
-    background: rgba(0, 0, 0, 0.8);
-    width: 95%;
-    left: 0;
-    opacity: 1;
-    transition: all 0.5s ease;
-    z-index: 1;
-    margin-top: -10px;
+  .logoname {
+    font-size: 1.25rem;
+    margin-left: -30px;
+  }
+  .navbar-services-icon {
+    margin-top: 13px;
   }
 
-  .nav-links {
-    text-align: center;
-    padding: 2rem;
-    width: 85%;
-    display: table;
-    height: 30px;
-    border-radius: 30px;
+  .navbar-menu {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
   }
 
-  .nav-links:hover {
-    background-color: #fff;
-    color: crimson;
-    border-radius: 0;
+  .navbar-right {
+    gap: 1rem;
   }
 
-  .navbar-logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(25%, 50%);
-  }
-
-  .menu-icon {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 1.8rem;
-    cursor: pointer;
-  }
-
-  .fa-times {
-    color: #fff;
-    font-size: 2rem;
-  }
-
-  .nav-links-mobile {
-    display: block;
-    text-align: center;
-    margin: 2rem auto;
-    border-radius: 54px;
-    width: 60%;
-    text-decoration: none;
-    font-size: 1.5rem;
-    background-color: transparent;
-    color: #fff;
-    padding: 14px 20px;
-
-    transition: all 0.3s ease-out;
-  }
-
-  .nav-links-mobile:hover {
-    background: #fff;
-    color: #242424;
-    transition: 250ms;
-  }
-}
-@media screen and (max-width: 800px) {
-  .NavbarItems {
-    position: relative;
-  }
-
-  .nav-menu {
+  /* Show search container and login icon on small screens */
+  .search-container {
     display: flex;
-    flex-direction: column;
-    width: 90%;
-    height: 90vh;
-    position: absolute;
-    top: 80px;
-    left: -100%;
-    opacity: 1;
-    transition: all 0.5s ease;
-    justify-content: start;
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
   }
 
-  .nav-menu.active {
-    width: 95%;
-    left: 0;
-    opacity: 1;
-    transition: all 0.5s ease;
-    z-index: 1;
+  .sign-in {
+    display: none; /* Hide the full "sign-in" button */
   }
 
-  .nav-links {
-    text-align: center;
-    padding: 2rem;
-    width: 85%;
-    display: table;
-    height: 30px;
-    border-radius: 30px;
-    margin-left: -20px;
-  }
-
-  .nav-links:hover {
-    background-color: white;
-    color: #242424;
-    border-radius: 0;
-  }
-
-  .navbar-logo {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(2%, 50%);
-  }
-
-  .menu-icon {
+  .login-icon {
     display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
-    font-size: 1.8rem;
-    cursor: pointer;
-  }
-
-  .fa-times {
-    color: #fff;
-    font-size: 2rem;
-  }
-
-  .nav-links-mobile {
-    display: block;
-    text-align: center;
-    margin-left: 70px;
-    border-radius: 54px;
-    width: 60%;
-    text-decoration: none;
-    font-size: 1.5rem;
-    background-color: transparent;
-    color: #fff;
-    padding: 14px 20px;
-    border: 2px solid white;
-    transition: all 0.3s ease-out;
-  }
-
-  .nav-links-mobile:hover {
-    background: #fff;
-    color: #242424;
-    transition: 250ms;
+    height: 25px;
+    margin-top: 13px; /* Show the small login icon */
   }
 }

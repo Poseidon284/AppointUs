@@ -1,0 +1,90 @@
+/* Main card container - clickable link */
+.card2 {
+  display: block;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 300px;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 15px;
+  font-family: "League Spartan", sans-serif;
+  font-size: 1.5rem;
+}
+
+.card2:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Image container */
+.card-image-container2 {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  border-radius: 15px;
+}
+
+.card-image2 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card2:hover .card-image2 {
+  transform: scale(1.1);
+}
+
+/* Overlay with text */
+.card-overlay2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1); /* Semi-transparent overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 1; /* Visible by default */
+  transition: background 0.3s ease, opacity 0.3s ease;
+}
+
+.card2:hover .card-overlay2 {
+  background: rgba(0, 0, 0, 0.5); /* Darker overlay on hover */
+}
+
+/* Text on overlay */
+.card-text2 {
+  color: white;
+  padding: 10px;
+}
+
+.card-title2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.card-description2 {
+  font-size: 0.9rem;
+  margin: 5px 0 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card2 {
+    width: 100%;
+  }
+
+  .card-title2 {
+    font-size: 1.3rem;
+  }
+
+  .card-description2 {
+    font-size: 0.85rem;
+  }
+}

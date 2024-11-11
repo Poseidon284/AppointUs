@@ -1,0 +1,111 @@
+/* Main container for the result card */
+.result-card {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: "League Spartan", sans-serif;
+  font-size: 1.5rem;
+}
+
+.result-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.result-card-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+/* Content styling */
+.result-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.result-card-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.result-card-address {
+  font-size: 1rem;
+  color: #555;
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.result-card-phone,
+.result-card-whatsapp {
+  font-size: 1rem;
+  color: #007bff;
+  margin: 0;
+  padding-bottom: 8px;
+}
+
+.result-card-phone a,
+.result-card-whatsapp a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.result-card-phone a:hover,
+.result-card-whatsapp a:hover {
+  text-decoration: underline;
+}
+
+.result-card-rating {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.result-card-rating-stars {
+  font-size: 1.2rem;
+  color: #f39c12;
+  margin-right: 5px;
+}
+
+.result-card-rating-number {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 600px) {
+  .result-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .result-card-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+
+  .result-card-content {
+    align-items: flex-start;
+  }
+
+  .result-card-name {
+    font-size: 1.5rem;
+  }
+}

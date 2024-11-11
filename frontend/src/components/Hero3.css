@@ -1,0 +1,54 @@
+@keyframes gradientAnimation {
+  0% {
+    background: linear-gradient(
+      45deg,
+      #ff6a00,
+      #ee0979
+    ); /* Orange and pink gradient */
+  }
+  50% {
+    background: linear-gradient(
+      45deg,
+      #ff6a00,
+      #ee0979
+    ); /* Keeping it constant for smooth effect */
+  }
+  100% {
+    background: linear-gradient(
+      45deg,
+      #ff6a00,
+      #ee0979
+    ); /* Repeat the same gradient */
+  }
+}
+
+.hero3 {
+  height: 59px; /* Adjusted to original height */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none; /* No border for a cleaner look */
+  background: linear-gradient(
+    45deg,
+    #ff6a00,
+    #ee0979
+  ); /* Initial gradient with only orange/yellow shades */
+  animation: gradientAnimation 5s ease-in-out infinite; /* Apply animation */
+  transition: background 1s ease-in-out; /* Smooth background transition */
+}
+
+.hero3-heading {
+  font-family: "League Spartan", sans-serif;
+  font-size: 2rem; /* Slightly larger size for emphasis */
+  color: #ffffff;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.6); /* Enhanced text shadow for readability */
+  margin: 0;
+  text-align: center;
+  letter-spacing: 1px; /* Adds a bit of spacing between letters */
+  transition: color 0.3s ease-in-out; /* Smooth color change on hover */
+}
+
+.hero3:hover .hero3-heading {
+  color: #ff6a00; /* Change text color to match the gradient on hover */
+}

@@ -1,0 +1,10 @@
+.cardsection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: auto;
+  width: 90%;
+
+  flex-wrap: wrap;
+}

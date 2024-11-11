@@ -191,6 +191,7 @@ INSTALLED_APPS = [
     'Businesses',
     'Bookings',
     'Service',
+    'PlumbingTemp',
 ]
 
 MIDDLEWARE = [
