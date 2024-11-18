@@ -125,9 +125,9 @@ const Bookings = () => {
         <button type="submit" disabled={isSubmitting}>
           {isSubmitting ? "Submitting..." : "Submit"}
         </button>
-      </form>
 
-      {responseMessage && <p className="response-message">{responseMessage}</p>}
+        {responseMessage && <p className="response-message">{responseMessage}</p>}
+      </form>
     </div>
   );
 };
