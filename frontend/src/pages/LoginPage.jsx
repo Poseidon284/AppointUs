@@ -18,7 +18,7 @@ const LoginPage = () => {
     <div>
       <Navbar />
       <LoginForm />
-      <div className="cardsection">
+      {/* <div className="cardsection">
         <Card
           image={cardimageone}
           title="Professional Card Title"
@@ -91,7 +91,7 @@ const LoginPage = () => {
           buttonText="Learn More"
           buttonLink="#"
         />
-      </div>
+      </div> */}
       <Hero2
         title="About-Us"
         subtitle="Connecting Services with Success"
