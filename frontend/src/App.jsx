@@ -10,6 +10,7 @@ import Plumbers from "./pages/Plumbers";
 import CompanyPage from "./pages/CompanyPage";
 import ServiceProvider from "./pages/ServiceProvider";
 import Contactuspage from "./pages/Contactuspage";
+import Aboutus from "./pages/Aboutus";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/company" element={<CompanyPage />} />{" "}
           <Route path="/serviceprovider" element={<ServiceProvider />} />{" "}
           <Route path="/contactus" element={<Contactuspage />} />{" "}
+          <Route path="/About-Us" element={<Aboutus />} />{" "}
         </Routes>
       </div>
     </Router>

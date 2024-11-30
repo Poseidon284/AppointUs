@@ -1,0 +1,69 @@
+/* Container styling */
+.social-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.social-card {
+  width: 300px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon styling (now black) */
+.social-icon {
+  font-size: 48px;
+  color: #000; /* Black color for icons */
+  margin-bottom: 15px;
+}
+
+/* Title styling */
+.social-card h3 {
+  margin: 10px 0;
+  font-size: 20px;
+  color: #333;
+}
+
+/* Contact details styling */
+.social-card p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 768px) {
+  .social-card {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .social-icon {
+    font-size: 40px;
+  }
+
+  .social-card h3 {
+    font-size: 18px;
+  }
+
+  .social-card p {
+    font-size: 14px;
+  }
+}

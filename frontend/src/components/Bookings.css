@@ -15,7 +15,7 @@
 }
 
 .form-image {
-  height: 570px;
+  height: 640px;
   width: 450px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -51,6 +51,13 @@
   font-size: 16px;
   color: #333;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bookings-form input[type="file"] {
+  padding: 5px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .bookings-form input:focus,
