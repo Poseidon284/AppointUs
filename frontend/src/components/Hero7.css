@@ -1,0 +1,70 @@
+/* Import League Spartan font */
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap");
+
+/* Root styling for the container */
+.hero7-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* Styling for individual sections */
+.hero7-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 20px 0;
+  width: 80%;
+  max-width: 1200px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Image styling */
+.hero7-image {
+  flex: 1;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Content styling */
+.hero7-content {
+  flex: 2;
+  padding: 20px;
+  font-family: "League Spartan", sans-serif;
+  text-align: left;
+}
+
+.hero7-content h2 {
+  margin: 10px 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+}
+
+.hero7-content p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 768px) {
+  .hero7-section {
+    flex-direction: column;
+  }
+
+  .hero7-image {
+    max-width: 100%;
+  }
+
+  .hero7-content {
+    text-align: center;
+  }
+}

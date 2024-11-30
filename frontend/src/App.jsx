@@ -8,6 +8,9 @@ import SignupPage from "./pages/SignupPage";
 import Home from "./pages/Home";
 import Plumbers from "./pages/Plumbers";
 import CompanyPage from "./pages/CompanyPage";
+import ServiceProvider from "./pages/ServiceProvider";
+import Contactuspage from "./pages/Contactuspage";
+import Aboutus from "./pages/Aboutus";
 
 const App = () => {
   return (
@@ -18,8 +21,11 @@ const App = () => {
           <Route path="/Login" element={<LoginPage />} />{" "}
           <Route path="/Signup" element={<SignupPage />} />{" "}
           <Route path="/Home" element={<Home />} />{" "}
-          <Route path="/plumbing" element={<Plumbers />} />{" "}
+          <Route path="/plumbers" element={<Plumbers />} />{" "}
           <Route path="/company" element={<CompanyPage />} />{" "}
+          <Route path="/serviceprovider" element={<ServiceProvider />} />{" "}
+          <Route path="/contactus" element={<Contactuspage />} />{" "}
+          <Route path="/About-Us" element={<Aboutus />} />{" "}
         </Routes>
       </div>
     </Router>
