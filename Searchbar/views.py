@@ -12,8 +12,7 @@ import os
 
 class SearchServiceView(APIView):
     def post(self, request, *args, **kwargs):
-        print(request.data)  
-        
+        # print(request.data)  
         input_string = request.data.get("query") or None
 
         descriptions = Business_User.objects.values('name','description')
@@ -34,7 +33,6 @@ class SearchServiceView(APIView):
         
         search_results = dict(search_results)
         search_results = [x for x in search_results.keys()]
-        # print(search_results)
 
-        # Respond with all results in the format React expects
+        # Respond with all results in the List format now(Change to JSON later)
         return JsonResponse({"results": search_results}, status=status.HTTP_200_OK)

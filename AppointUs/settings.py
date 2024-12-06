@@ -187,11 +187,13 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
+    'oauth2_provider',
     'User',
     'Businesses',
     'Bookings',
     'Service',
     'PlumbingTemp',
+    'Searchbar',
 ]
 
 MIDDLEWARE = [
