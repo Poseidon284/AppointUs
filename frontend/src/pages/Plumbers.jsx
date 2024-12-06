@@ -8,15 +8,12 @@ const Plumbers = () => {
   const [businesses, setBusinesses] = useState([]);
 
   useEffect(() => {
-    // Fetch data from the backend API
     const fetchData = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/api/plumbing/"); // Replace with your API URL
+        const response = await fetch("http://127.0.0.1:8000/api/business/"); 
         const data = await response.json();
-        console.log(data); // Log the response to check the structure
-
-        // The data is inside the "message" key, so extract it
-        setBusinesses(data.message); // Set the fetched businesses into state
+        console.log(data); 
+        setBusinesses(data.message); 
       } catch (error) {
         console.error("Error fetching business data:", error);
       }
@@ -36,7 +33,7 @@ const Plumbers = () => {
             <ResultCard
               image={business.image}
               name={business.name}
-              whatsappLink={business.whatsapp_link} // Adjusted to match key in the response
+              whatsappLink={business.whatsapp_link} 
               phone={business.phone}
               address={business.address}
               rating={business.rating}
