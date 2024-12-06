@@ -1,6 +1,8 @@
 import React from "react";
 import "./Hero6.css";
 import datanal from "../assets/IMAGE12.avif";
+import flush from "../assets/flush.jpg";
+
 
 const Hero6 = ({ logo, details, orders, analyticsImage }) => {
   return (
@@ -26,8 +28,10 @@ const Hero6 = ({ logo, details, orders, analyticsImage }) => {
         <div className="hero6-orders-container">
           {orders.map((order, index) => (
             <div key={index} className="hero6-order-card">
-              <span className="hero6-order-icon">📦</span>
-              <span className="hero6-order-text">{order}</span>
+              <span className="hero6-order-icon"><img src={flush}></img></span>
+              <span className="hero6-order-text">{order.name}</span>
+              <span className="hero6-order-text">{order.phone}</span>
+              <span className="hero6-order-text">{order.location}</span>
             </div>
           ))}
         </div>

@@ -191,8 +191,8 @@ INSTALLED_APPS = [
     'User',
     'Businesses',
     'Bookings',
+    'Reviews',
     'Service',
-    'PlumbingTemp',
     'Searchbar',
 ]
 

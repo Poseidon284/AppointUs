@@ -9,6 +9,11 @@ class BookingStatus(models.TextChoices):
     COMPLETED = 'Completed', 'Completed'
     CANCELED = 'Canceled', 'Canceled'
 
+class TimeChoices(models.TextChoices):
+    MORNING = 'morning', 'morning'
+    AFTERNOON = 'afternoon', 'afternoon'
+    EVENING = 'evening', 'evening'
+
 class Booking(models.Model):
     service_name = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='booked_service') 
     business = models.ForeignKey(Business_User, on_delete=models.CASCADE, related_name='offered_by') 
@@ -44,4 +49,18 @@ class Booking(models.Model):
     def __str__(self):
         return f'Booking for {self.service_name.service_name} at {self.business.name}'
 
+class BookingEnquiry(models.Model):
+    name = models.CharField(max_length=255)  
+    location = models.CharField(max_length=255)  
+    phone = models.CharField(max_length=15)  
+    query = models.TextField()  
+    time = models.CharField(
+        max_length=10,
+        choices=TimeChoices.choices,
+        default=TimeChoices.AFTERNOON
+    ) 
+    email = models.EmailField(blank=True, null=True) 
+    image = models.ImageField(upload_to='Components/bookingimages/')
 
+    def __str__(self):
+        return f"Query by {self.name} at {self.time}"
