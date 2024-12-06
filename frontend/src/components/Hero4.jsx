@@ -1,9 +1,12 @@
 import React from "react";
 import "./Hero4.css"; // Import the CSS file
 
-const Hero4 = ({ companyName, address, contact, ratings }) => {
+const Hero4 = ({ companyName, address, contact, ratings, backgroundImage }) => {
   return (
-    <section className="hero-section4">
+    <section
+      className="hero-section4"
+      style={{ backgroundImage: `url(${backgroundImage})` }} // Apply background image dynamically
+    >
       <div className="container4">
         <h1 className="company-name4">{companyName}</h1>
         <div className="company-details4">

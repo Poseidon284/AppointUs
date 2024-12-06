@@ -12,6 +12,7 @@ import Map from "../components/Map";
 import "./CompanyPage.css";
 import ContactForm from "../components/Contactform";
 import Bookings from "../components/Bookings";
+import Review from "../components/Review";
 const CompanyPage = () => {
   const services = [
     "Emergency Plumbing Services",
@@ -37,16 +38,17 @@ const CompanyPage = () => {
         address="451, Avinashi Road, Opp.Tirupur Textiles, Masakalipalayam, Peelamedu, Coimbatore, Tamil Nadu 641004, India"
         contact="9482263728"
         ratings="4.0"
+        backgroundImage=""
       />
       <Gallery />
-
+      <Review />
       <Hero5
         title="About Fast Flow Plumbing"
         description="DripFix Plumbing is your reliable solution for all plumbing needs, from minor repairs to major installations. Our licensed plumbers are skilled in leak detection, drain cleaning, water heater repairs, and more. We offer 24/7 emergency services to address any urgent plumbing issues, and our work is backed by a satisfaction guarantee. DripFix Plumbing ensures a worry-free plumbing experience."
         services={services}
         experienceDescription="With thousands of satisfied customers and a 95% customer satisfaction rate, we are committed to providing reliable, cost-effective plumbing solutions. Our experts have worked on plumbing projects for homeowners, builders, and businesses across the region."
-        latitude={34.0522} // Example latitude (Los Angeles)
-        longitude={-118.2437} // Example longitude (Los Angeles)
+        latitude={34.0522}
+        longitude={-118.2437}
         socialLinks={socialLinks}
       />
       <Bookings />

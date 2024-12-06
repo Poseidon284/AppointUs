@@ -1,9 +1,32 @@
 .hero-section4 {
   padding: 3rem 1.5rem;
-  background-color: #f8f9fa;
+  background-color: #f8f9fa; /* Default background color */
   text-align: center;
   border-bottom: 2px solid #dee2e6;
+  background-size: cover; /* Ensure the image covers the section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent image repetition */
+  position: relative; /* Required for overlay positioning */
 }
+
+.hero-section4::before {
+  content: ""; /* Create an overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay for readability */
+  z-index: 1; /* Overlay should be below content */
+}
+
+.container4 {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2; /* Ensure content is above the overlay */
+}
+
 .social-icons4 {
   display: flex;
   justify-content: center;
@@ -22,21 +45,16 @@
   transform: scale(1.1);
 }
 
-.container4 {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
 .company-name4 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #343a40;
+  color: #fff; /* White text to contrast with background */
   margin-bottom: 1rem;
 }
 
 .company-details4 {
   font-size: 1.1rem;
-  color: #495057;
+  color: #f8f9fa; /* Light text for readability */
 }
 
 .address4,
@@ -63,10 +81,10 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
+
 #hero4-contact-btn2 {
   background-color: white;
   margin-left: -19px;
-
   font-size: 1rem;
   font-weight: bold;
   padding: 0.75rem 1.5rem;
@@ -88,6 +106,7 @@
   transform: translateY(0);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 }
+
 #hero4-contact-btn2:hover {
   background-color: #005bb5;
   transform: translateY(-2px);
