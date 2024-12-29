@@ -29,9 +29,9 @@ const Hero6 = ({ logo, details, orders, analyticsImage }) => {
           {orders.map((order, index) => (
             <div key={index} className="hero6-order-card">
               <span className="hero6-order-icon"><img src={flush}></img></span>
-              <span className="hero6-order-text">{order.name}</span>
-              <span className="hero6-order-text">{order.phone}</span>
-              <span className="hero6-order-text">{order.location}</span>
+              <span className="hero6-order-text">{order.name}</span><br/>
+              <span className="hero6-order-text">{order.phone}</span><br/>
+              <span className="hero6-order-text">{order.location}</span><br/>
             </div>
           ))}
         </div>

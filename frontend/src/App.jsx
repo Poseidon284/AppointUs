@@ -11,6 +11,7 @@ import CompanyPage from "./pages/CompanyPage";
 import ServiceProvider from "./pages/ServiceProvider";
 import Contactuspage from "./pages/Contactuspage";
 import Aboutus from "./pages/Aboutus";
+import ProfilePage from "./pages/ProfilePage";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/plumbing" element={<Plumbers />} />{" "}
           <Route path="/company" element={<CompanyPage />} />{" "}
           <Route path="/serviceprovider" element={<ServiceProvider />} />{" "}
+          <Route path="/profile" element={<ProfilePage />} />{" "}
           <Route path="/contactus" element={<Contactuspage />} />{" "}
           <Route path="/About-Us" element={<Aboutus />} />{" "}
         </Routes>

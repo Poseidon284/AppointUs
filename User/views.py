@@ -12,7 +12,7 @@ class LoginView(APIView):
         user = authenticate(request, username=email, password=password)
         
         if user is not None:
-            return JsonResponse({"message": "Login successful", "user_id": user.id}, status=status.HTTP_200_OK)
+            return JsonResponse({"message": "Login successful", "user_id": user.id, "username":user.id}, status=status.HTTP_200_OK)
         else:
             return JsonResponse({"message": "Invalid username or password"}, status=status.HTTP_400_BAD_REQUEST)
 
