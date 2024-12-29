@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
-import "./LoginForm.css";
 import { useNavigate } from "react-router-dom";
-import backgroundvideo from "../assets/backgroundvideo.mp4";
+import { LoginContext } from "../LoginContext";
+import "./LoginForm.css";
+import backgroundvideo from "../assets/backkk.mp4";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [errorMessage, setErrorMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const { setLoginDetails } = useContext(LoginContext);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,13 +21,16 @@ const LoginForm = () => {
     e.preventDefault();
     setIsLoading(true);
     try {
-      // Updated axios request URL to target backend at port 8000
       const response = await axios.post(
         "http://localhost:8000/api/login/",
         formData
       );
       console.log("Login successful:", response.data);
-      // Handle successful login here, e.g., redirect to dashboard or save auth token
+
+      console.log("Response Data: ", response.data);
+      setLoginDetails(response.data);
+      console.log("Updated Context Value: ", response.data);
+      // Navigate to the Bookings page
       navigate("/Home");
     } catch (error) {
       setErrorMessage(
@@ -45,7 +50,7 @@ const LoginForm = () => {
       <form onSubmit={handleSubmit} className="login-form">
         <h2 className="login-title">Login</h2>
 
-        <label htmlFor="username">Username</label>
+        <label htmlFor="email">Email</label>
         <input
           type="text"
           id="email"
@@ -53,7 +58,7 @@ const LoginForm = () => {
           value={formData.email}
           onChange={handleChange}
           required
-          placeholder="Enter your Username"
+          placeholder="Enter your email"
         />
 
         <label htmlFor="password">Password</label>
@@ -73,7 +78,6 @@ const LoginForm = () => {
           {isLoading ? "Logging in..." : "Login"}
         </button>
 
-        {/* Sign-up link for new users */}
         <p className="signup-link">
           Not a member? <a href="/signup">Sign Up</a>
         </p>

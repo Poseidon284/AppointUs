@@ -1,11 +1,25 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 import "./Hero4.css"; // Import the CSS file
 
 const Hero4 = ({ companyName, address, contact, ratings, backgroundImage }) => {
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  // Function to handle the "Book Now" button click
+  const handleBookNow = () => {
+    navigate("/book", {
+      state: {
+        companyName,
+        address,
+        contact,
+        ratings,
+      },
+    });
+  };
+
   return (
     <section
       className="hero-section4"
-      style={{ backgroundImage: `url(${backgroundImage})` }} // Apply background image dynamically
     >
       <div className="container4">
         <h1 className="company-name4">{companyName}</h1>
@@ -54,7 +68,10 @@ const Hero4 = ({ companyName, address, contact, ratings, backgroundImage }) => {
             <i className="fab fa-instagram"></i>
           </a>
         </div>
-        <button id="hero4-contact-btn">BOOK NOW</button>
+        {/* Book Now button triggers navigation to /book */}
+        <button onClick={handleBookNow} id="hero4-contact-btn">
+          BOOK NOW
+        </button>
         <a
           href="https://wa.me/1234567890"
           target="_blank"

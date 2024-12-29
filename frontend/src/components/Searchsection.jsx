@@ -1,16 +1,22 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Searchsection.css";
 
 const Searchsection = () => {
-  const [query, setQuery] = useState();
-  const [results, setResults] = useState([]);
+  const [query, setQuery] = useState("");
+  const navigate = useNavigate();
 
   const handleSearch = async () => {
     try {
-      const response = await axios.post("http://localhost:8000/api-searchbar/", { query });
-      setResults(response.data.results || []); 
-      console.log(response.data)
+      const response = await axios.post(
+        "http://localhost:8000/api-searchbar/",
+        { query }
+      );
+
+      const results = response.data.results || [];
+
+      navigate("/results", { state: { query, results } });
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -34,13 +40,6 @@ const Searchsection = () => {
           <button className="search-button" onClick={handleSearch}>
             Search
           </button>
-        </div>
-        <div className="results-container">
-          {results.map((result, index) => (
-            <div key={index} className="result-item">
-              {result}
-            </div>
-          ))}
         </div>
       </div>
     </div>
