@@ -28,7 +28,7 @@ const Hero1 = () => {
         <button className="get-started-btn" onClick={handleGetStartedClick}>
           Get Started
         </button>
-        <button className="get-started-btn">About Us</button>
+        <button className="get-started-btn">Service-Provider</button>
         {/* Get Started button */}
       </div>
     </div>
