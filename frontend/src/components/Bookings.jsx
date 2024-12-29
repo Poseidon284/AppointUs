@@ -5,21 +5,22 @@ import FORMIMAGE from "../assets/IMAGE20.jpg";
 import { LoginContext } from "../LoginContext";
 
 const Bookings = () => {
-  const { loginDetails } = useContext(LoginContext);
-  console.log(loginDetails);
+  const { loginDetails } = useContext(LoginContext); // Get login details from context
+
   const [formData, setFormData] = useState({
-    name: loginDetails?.name || "", // Prefill with login details
+    name: loginDetails?.name || "", 
     location: "",
-    phone: loginDetails?.phone || "",
+    phone: loginDetails?.phone || "", 
     query: "",
     time: "",
-    email: loginDetails?.email || "", // Prefill email
+    email: loginDetails?.email || "", // Pre-fill email from login details
     image: null,
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [responseMessage, setResponseMessage] = useState("");
 
+  // Handle form input changes
   const handleChange = (e) => {
     if (e.target.name === "image") {
       setFormData({ ...formData, [e.target.name]: e.target.files[0] });
@@ -28,17 +29,20 @@ const Bookings = () => {
     }
   };
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setResponseMessage("");
 
     const formDataToSend = new FormData();
+
     for (const key in formData) {
       if (key !== "image") {
         formDataToSend.append(key, formData[key]);
       }
     }
+
     if (formData.image) {
       formDataToSend.append("image", formData.image);
     }
@@ -50,6 +54,7 @@ const Bookings = () => {
         {
           headers: {
             "Content-Type": "multipart/form-data",
+            Authorization: `Token ${loginDetails?.token}`, 
           },
         }
       );
@@ -67,14 +72,13 @@ const Bookings = () => {
       setResponseMessage(
         "Sorry, there was an issue submitting your booking. Please try again."
       );
+    } finally {
+      setIsSubmitting(false);
     }
-
-    setIsSubmitting(false);
   };
-
   return (
     <div className="bookings-container">
-      <h2>Welcome, {loginDetails?.user_id || "Guest"}!</h2>
+      <h2>Welcome, {loginDetails?.username || "Guest"}!</h2>
       <div className="image-container">
         <img src={FORMIMAGE} alt="Service" className="form-image" />
       </div>

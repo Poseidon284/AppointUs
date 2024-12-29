@@ -1,5 +1,7 @@
 from django.http import JsonResponse
 from rest_framework.views import APIView
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.authentication import TokenAuthentication
 from rest_framework import status
 import pandas as pd
 import random
@@ -7,16 +9,19 @@ from .pricing import DynamicPriceCalculator
 from .search import Search
 
 class SearchServiceView(APIView):
+    # authentication_classes = [TokenAuthentication]
+    # permission_classes = [IsAuthenticated]
+
     def post(self, request, *args, **kwargs):
         input_string = request.data.get("query") or None
 
         if input_string is None:
-            return JsonResponse({"Error": "No input string provided"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+            return JsonResponse({"Error": "No input string provided"}, status=status.HTTP_400_BAD_REQUEST)
 
-        descriptions = pd.read_csv('K:\Final Year project 1\Project Code\env\AppointUs\Searchbar\description_with_location.csv')
+        descriptions = pd.read_csv('Searchbar/description_with_location.csv')
         descriptions_df = pd.DataFrame(descriptions)
     
-        provider_data = pd.read_csv('K:\Final Year project 1\Project Code\env\AppointUs\Searchbar\description_with_location.csv')
+        provider_data = pd.read_csv('Searchbar/description_with_location.csv')
         provider_locations = provider_data.set_index('Service Name')[['Latitude', 'Longitude']].to_dict(orient='index')
 
         searcher = Search()

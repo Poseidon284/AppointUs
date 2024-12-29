@@ -5,7 +5,7 @@ from Service.views import ServiceView
 from User.views import LoginView, SignupView
 from Businesses.views import BusinessEachView, BusinessListView
 from Searchbar.views import SearchServiceView
-from Bookings.views import BookingView
+from Bookings.views import BookingEnquiryAPIView
 from Reviews.views import ReviewView
 
 urlpatterns = [
@@ -15,7 +15,7 @@ urlpatterns = [
     path('api/signup/',SignupView.as_view(),name='signup'),
     path('api/business/',BusinessListView.as_view(),name='business'),
     path('api/businesseach/',BusinessEachView.as_view(),name='business_each'),
-    path('api/bookings/',BookingView.as_view(),name='booking'),
+    path('api/bookings/',BookingEnquiryAPIView.as_view(),name='booking'),
     path('api-reviews/',ReviewView.as_view(),name='reviews'),
     path('api-searchbar/',SearchServiceView.as_view(),name='searchbar'),
     path('admin/', admin.site.urls),

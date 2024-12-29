@@ -4,17 +4,52 @@ from django.contrib.auth.models import User
 from rest_framework.views import APIView
 from rest_framework import status
 
+from django.contrib.auth import authenticate
+from rest_framework.views import APIView
+from rest_framework.authtoken.models import Token
+from rest_framework import status
+from django.http import JsonResponse
+
 class LoginView(APIView):
     def post(self, request, *args, **kwargs):
+        # Get email and password from request data
         email = request.data.get("email")
         password = request.data.get("password")
-        
+
+        if not email or not password:
+            return JsonResponse(
+                {"message": "Email and password are required."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        # Authenticate user
         user = authenticate(request, username=email, password=password)
-        
+
         if user is not None:
-            return JsonResponse({"message": "Login successful", "user_id": user.id, "username":user.id}, status=status.HTTP_200_OK)
+            if user.is_active:
+                token, created = Token.objects.get_or_create(user=user)
+
+                return JsonResponse(
+                    {
+                        "message": "Login successful",
+                        "token": token.key,
+                        "user_id": user.id,
+                        "username": user.username,
+                        "email": user.email,
+                    },
+                    status=status.HTTP_200_OK,
+                )
+            else:
+                return JsonResponse(
+                    {"message": "This account is inactive."},
+                    status=status.HTTP_403_FORBIDDEN,
+                )
         else:
-            return JsonResponse({"message": "Invalid username or password"}, status=status.HTTP_400_BAD_REQUEST)
+            return JsonResponse(
+                {"message": "Invalid email or password."},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
 
 class SignupView(APIView):
     def post(self, request, *args, **kwargs):
