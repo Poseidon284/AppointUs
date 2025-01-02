@@ -20,6 +20,7 @@ def get_default_business():
 
 class Reviews(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='reviews_by_user')
+    business = models.ForeignKey(Business, on_delete=models.CASCADE, related_name='rev_business', default=0)
     # service = models.ForeignKey(Business, on_delete=models.CASCADE, related_name='reviews_to_service')
     rating = models.FloatField()
     satisfaction = models.CharField(

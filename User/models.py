@@ -3,6 +3,7 @@ from django.db import models
 
 class CommonUser(models.Model):
     user_regular = models.ForeignKey(User, on_delete=models.CASCADE, related_name='common_user')
+    age = models.IntegerField()
     location = models.CharField(max_length=255)
     addresses = models.TextField()
 
