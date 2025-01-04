@@ -22,18 +22,18 @@ const Navbar2 = () => {
           <Link to="/services">Services</Link> {/* Link to the Menu page */}
         </li>
         <li>
-          <Link to="/contact">Contact Us</Link>{" "}
+          <Link to="/contactus">Contact Us</Link>{" "}
           {/* Link to the Contact Us page */}
         </li>
       </ul>
       <div className="navbar-right">
         <div className="navbar-services-icon">
-          <Link to="/services">
+          <Link to="/serviceprovider">
             <img src={serviceslogo} alt="Services Icon" />
           </Link>
         </div>
-        <Link to="/bookings">
-          <button className="sign-in">Bookings</button>{" "}
+        <Link to="/">
+          <button className="sign-in">Logout</button>{" "}
           {/* Link to the Bookings page */}
         </Link>
         <Link to="/login">

@@ -20,20 +20,20 @@ import Footer from "../components/Footer";
 import Hero2 from "../components/Hero2";
 import ContactForm from "../components/Contactform";
 import Card2 from "../components/Card2";
-import Chatbot from "../components/Chatbot";
 import ResultCard from "../components/ResultCard";
 import SelectUser from "../components/SelectUser";
 import BUD from "../components/BUD";
+import BigHero from "../components/BigHero";
 
 const Home = () => {
   return (
     <div>
       <Navbar2 />
-      <div className="searchsection">
-        <Searchsection />
-      </div>
       <div>
-        <Chatbot />
+        <BigHero
+          title="Services"
+          subtitle="Appoint-Us provides a wide range of services lets see about that in this Section"
+        />
       </div>
       <div className="cardsection2">
         <Card2

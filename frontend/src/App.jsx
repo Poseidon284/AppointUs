@@ -15,6 +15,10 @@ import Aboutus from "./pages/Aboutus";
 import ProfilePage from "./pages/ProfilePage";
 import SearchResults from "./pages/Searchresults";
 import BookApp from "./pages/BookApp";
+import SelectUser from "./components/SelectUser";
+import SelectingUser from "./pages/SelectingUser";
+import BUDentry from "./pages/BUDEntry";
+import Services from "./pages/Services";
 
 const App = () => {
   return (
@@ -34,6 +38,9 @@ const App = () => {
             <Route path="/Faizan" element={<ProfilePage />} />
             <Route path="/results" element={<SearchResults />} />
             <Route path="/book" element={<BookApp />} />
+            <Route path="/selectuser" element={<SelectingUser />} />
+            <Route path="/business" element={<BUDentry />} />
+            <Route path="/services" element={<Services />} />
           </Routes>
         </div>
       </Router>

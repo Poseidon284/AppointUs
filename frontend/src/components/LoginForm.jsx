@@ -31,7 +31,7 @@ const LoginForm = () => {
       setLoginDetails(response.data);
       console.log("Updated Context Value: ", response.data);
       // Navigate to the Bookings page
-      navigate("/Home");
+      navigate("/selectuser");
     } catch (error) {
       setErrorMessage(
         error.response?.data?.message || "Login failed. Please try again."

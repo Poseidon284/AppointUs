@@ -17,25 +17,16 @@ const Navbar = () => {
       </div>
       <ul className="navbar-menu">
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/contactus">Contact-Us</Link>
         </li>
         <li>
-          <Link to="#services">Services</Link>
+          <Link to="/About-Us">About-Us</Link>
         </li>
         <li>
-          <Link to="/contact-us">Contact Us</Link>
+          <Link to="/Services">Services</Link>
         </li>
       </ul>
       <div className="navbar-right">
-        {/* Search Bar */}
-        <div className="search-container">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="search-input2"
-          />
-          <img src={search_icon} alt="Search Icon" className="search-icon" />
-        </div>
         <div className="navbar-services-icon">
           <img src={serviceslogo} alt="Services Icon" />
         </div>

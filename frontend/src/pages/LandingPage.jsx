@@ -25,7 +25,7 @@ const LandingPage = () => {
           title="Carpentry Services"
           description="Get high-quality carpentry work for furniture, repairs, and custom designs."
           buttonText="Learn More"
-          buttonLink="#"
+          buttonLink="/About-Us"
         />
 
         <Card
@@ -33,7 +33,7 @@ const LandingPage = () => {
           title="Plumbing Services"
           description="Expert plumbing solutions for repairs, installations, and maintenance."
           buttonText="Learn More"
-          buttonLink="#"
+          buttonLink="/About-Us"
         />
 
         <Card
@@ -41,7 +41,7 @@ const LandingPage = () => {
           title="Painting Services"
           description="Professional painting for homes, offices, and more."
           buttonText="Learn More"
-          buttonLink="#"
+          buttonLink="/About-Us"
         />
 
         <Card
@@ -49,23 +49,23 @@ const LandingPage = () => {
           title="Electrician Services"
           description="Certified electricians for all electrical repairs, installations, and upgrades."
           buttonText="Learn More"
-          buttonLink="#"
+          buttonLink="/About-Us"
         />
 
         <Card
           image={barber}
-          title="Mason Services"
-          description="Quality masonry services for building, repairs, and renovations."
+          title="Salon Services"
+          description="Expert beauty and grooming services, including haircuts, styling, and more."
           buttonText="Learn More"
-          buttonLink="#"
+          buttonLink="/About-Us"
         />
 
         <Card
           image={cardimageone}
-          title="Salon Services"
-          description="Expert beauty and grooming services, including haircuts, styling, and more."
+          title="Cleaning Services"
+          description="Expert cleaning and Insecticide services."
           buttonText="Learn More"
-          buttonLink="#"
+          buttonLink="/About-Us"
         />
       </div>
       <Hero2

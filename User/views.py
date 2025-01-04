@@ -1,14 +1,10 @@
 from django.contrib.auth import authenticate
 from django.http import JsonResponse
 from django.contrib.auth.models import User
+from Businesses.models import Business_User
 from rest_framework.views import APIView
 from rest_framework import status
-
-from django.contrib.auth import authenticate
-from rest_framework.views import APIView
 from rest_framework.authtoken.models import Token
-from rest_framework import status
-from django.http import JsonResponse
 
 class LoginView(APIView):
     def post(self, request, *args, **kwargs):
@@ -50,19 +46,50 @@ class LoginView(APIView):
                 status=status.HTTP_400_BAD_REQUEST,
             )
 
-
 class SignupView(APIView):
     def post(self, request, *args, **kwargs):
+        # Extract common user data
         username = request.data.get("username")
         email = request.data.get("email")
         password = request.data.get("password")
+        is_business_user = request.data.get("isBusinessUser", False)
+
+        # Handle business user-specific data
+        business_name = request.data.get("businessname")
+        phone = request.data.get("phone")
+        profile_picture = request.FILES.get("profilePicture")  # Uploaded file
 
         try:
+            print(request.data)
+            # Check for existing email
             if User.objects.filter(email=email).exists():
-                return JsonResponse({"message":"Email already exists"}, status=status.HTTP_400_BAD_REQUEST )
-            user = User.objects.create_user(username, email, password)
-            user.first_name = username
-        except:
-            return JsonResponse({"message":"Username already exists"}, status=status.HTTP_400_BAD_REQUEST )
+                return JsonResponse({"message": "Email already exists"}, status=status.HTTP_400_BAD_REQUEST)
 
-        return JsonResponse({"message":f"Welcome to AppointUS {username}"}, status=status.HTTP_201_CREATED)
+            # Create the User instance
+            user = User.objects.create_user(username=username, email=email, password=password)
+            user.first_name = username
+            user.save()
+
+            # If the user is a business user, create a Business_User instance
+            if is_business_user:
+                if not (business_name and phone):
+                    return JsonResponse(
+                        {"message": "Business name and phone are required for business users"},
+                        status=status.HTTP_400_BAD_REQUEST,
+                    )
+
+                Business_User.objects.create(
+                    user_business=user,
+                    name=business_name,
+                    phone=phone,
+                    profile_picture=profile_picture,
+                )
+                
+            # Return success response
+            return JsonResponse({"message": f"Welcome to AppointUS, {username}"}, status=status.HTTP_201_CREATED)
+
+        except Exception as e:
+            return JsonResponse(
+                {"message": "An error occurred during signup", "details": str(e)},
+                status=status.HTTP_400_BAD_REQUEST,
+            )

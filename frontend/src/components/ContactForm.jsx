@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import emailjs from "emailjs-com";
 import "./ContactForm.css";
 import contactImage from "../assets/IMAGE09.gif";
 
@@ -18,26 +18,34 @@ const ContactForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setResponseMessage("");
 
-    try {
-      // Updated axios request URL to target backend at port 8000
-      const response = await axios.post(
-        "http://localhost:8000/contact",
-        formData
-      );
-      setResponseMessage("Thank you! Your query has been submitted.");
-      setFormData({ name: "", email: "", query: "" });
-    } catch (error) {
-      setResponseMessage(
-        "Sorry, there was an issue submitting your form. Please try again."
-      );
-    }
-
-    setIsSubmitting(false);
+    emailjs
+      .send(
+        "service_gtps0ra", // Replace with your EmailJS service ID
+        "template_uv7kisv", // Replace with your EmailJS template ID
+        {
+          name: formData.name, // Match variable names to template
+          email: formData.email,
+          query: formData.query,
+        },
+        "ifAKyDouSIwdyhJDe" // Replace with your EmailJS user/public key
+      )
+      .then(() => {
+        setResponseMessage("Thank you! Your query has been submitted.");
+        setFormData({ name: "", email: "", query: "" });
+      })
+      .catch(() => {
+        setResponseMessage(
+          "Sorry, there was an issue submitting your form. Please try again."
+        );
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
 
   return (

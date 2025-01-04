@@ -1,4 +1,3 @@
-// SignUpForm.js
 import React, { useState } from "react";
 import axios from "axios";
 import "./Signup.css";
@@ -11,21 +10,32 @@ const SignUpForm = () => {
     email: "",
     password: "",
     confirmPassword: "",
+    isBusinessUser: false,
+    businessname: "",
+    phone: "",
+    profilePicture: null,
   });
   const [errorMessage, setErrorMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    const { name, value, type, checked } = e.target;
+    if (type === "checkbox") {
+      setFormData({ ...formData, [name]: checked });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
+  };
+
+  const handleFileChange = (e) => {
+    setFormData({ ...formData, profilePicture: e.target.files[0] });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Basic password confirmation check
     if (formData.password !== formData.confirmPassword) {
       setErrorMessage("Passwords do not match.");
       setIsLoading(false);
@@ -33,10 +43,36 @@ const SignUpForm = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:8000/api/signup/", formData);
+      let dataToSend;
+
+      if (formData.isBusinessUser) {
+        // Create FormData for business user
+        dataToSend = new FormData();
+        for (const key in formData) {
+          if (key === "profilePicture" && formData.profilePicture) {
+            dataToSend.append(key, formData.profilePicture);
+          } else {
+            dataToSend.append(key, formData[key]);
+          }
+        }
+      } else {
+        // Create JSON object for normal user
+        const { username, email, password, confirmPassword } = formData;
+        dataToSend = { username, email, password, confirmPassword };
+      }
+
+      const config = formData.isBusinessUser
+        ? { headers: { "Content-Type": "multipart/form-data" } }
+        : { headers: { "Content-Type": "application/json" } };
+
+      const response = await axios.post(
+        "http://localhost:8000/api/signup/",
+        dataToSend,
+        config
+      );
+
       console.log("Sign-up successful:", response.data);
-      // Handle successful sign-up here, e.g., redirect to welcome page
-      navigate("/Login")
+      navigate("/Login");
     } catch (error) {
       setErrorMessage(
         error.response?.data?.message || "Sign-up failed. Please try again."
@@ -99,13 +135,57 @@ const SignUpForm = () => {
           placeholder="Confirm your password"
         />
 
+        <label>
+          <input
+            type="checkbox"
+            name="isBusinessUser"
+            checked={formData.isBusinessUser}
+            onChange={handleChange}
+          />
+          Are you a business user?
+        </label>
+
+        {formData.isBusinessUser && (
+          <>
+            <label htmlFor="businessName">Business Name</label>
+            <input
+              type="text"
+              id="businessName"
+              name="businessname"
+              value={formData.businessName}
+              onChange={handleChange}
+              required
+              placeholder="Enter your business name"
+            />
+
+            <label htmlFor="phoneNumber">Phone Number</label>
+            <input
+              type="text"
+              id="phoneNumber"
+              name="phone"
+              value={formData.phoneNumber}
+              onChange={handleChange}
+              required
+              placeholder="Enter your phone number"
+            />
+
+            <label htmlFor="profilePicture">Profile Picture</label>
+            <input
+              type="file"
+              id="profilePicture"
+              name="profilePicture"
+              onChange={handleFileChange}
+              required
+            />
+          </>
+        )}
+
         {errorMessage && <p className="error-message">{errorMessage}</p>}
 
         <button type="submit" disabled={isLoading}>
           {isLoading ? "Signing up..." : "Sign Up"}
         </button>
 
-        {/* Login link for existing users */}
         <p className="login-link">
           Already have an account? <a href="/login">Login</a>
         </p>

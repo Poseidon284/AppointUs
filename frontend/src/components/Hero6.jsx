@@ -3,7 +3,6 @@ import "./Hero6.css";
 import datanal from "../assets/IMAGE12.avif";
 import flush from "../assets/flush.jpg";
 
-
 const Hero6 = ({ logo, details, orders, analyticsImage }) => {
   return (
     <div className="hero6-container">
@@ -28,21 +27,23 @@ const Hero6 = ({ logo, details, orders, analyticsImage }) => {
         <div className="hero6-orders-container">
           {orders.map((order, index) => (
             <div key={index} className="hero6-order-card">
-              <span className="hero6-order-icon"><img src={flush}></img></span>
-              <span className="hero6-order-text">{order.name}</span><br/>
-              <span className="hero6-order-text">{order.phone}</span><br/>
-              <span className="hero6-order-text">{order.location}</span><br/>
+              <span className="hero6-order-text">{order.name}</span>
+              <br />
+              <span className="hero6-order-text">{order.phone}</span>
+              <br />
+              <span className="hero6-order-text">{order.location}</span>
+              <br />
             </div>
           ))}
         </div>
 
         <h2 className="hero6-analytics-heading">Data Analytics</h2>
         <div className="hero6-analytics-container">
-          <img
+          <a href='http://localhost:8501/' target="_main"><img
             src={datanal}
             alt="Analytics Image"
             className="hero6-analytics-image"
-          />
+          /></a>
         </div>
       </div>
     </div>

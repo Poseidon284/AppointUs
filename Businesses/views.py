@@ -26,12 +26,7 @@ class BusinessUserView(APIView):
 class BusinessView(APIView):
     def get(self, request, *args, **kwargs):
         try:
-            # Get businesses linked to the authenticated user's Business_User
-            business_user = request.user.business_vendor.first()
-            if not business_user:
-                return JsonResponse({"error": "No associated Business_User found."}, status=status.HTTP_404_NOT_FOUND)
-
-            businesses = Business.objects.filter(business_user=business_user)
+            businesses = Business.objects.filter(type="Plumbing").order_by(F('rating').desc(nulls_last=True))
             serializer = BusinessSerializer(businesses, many=True)
             return JsonResponse({"message":serializer.data}, status=status.HTTP_200_OK)
         except Exception as e:

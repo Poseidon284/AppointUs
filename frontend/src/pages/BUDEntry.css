@@ -1,0 +1,10 @@
+.budcontainer {
+  height: 160vh; /* Makes the container height responsive */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centers the form within the container */
+  margin: 0 auto; /* Ensures the container is centered */
+  padding: 20px;
+  box-sizing: border-box; /* Ensures padding is included within the height */
+  border-radius: 10px; /* Optional: Adds rounded corners */
+}

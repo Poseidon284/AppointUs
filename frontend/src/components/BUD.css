@@ -1,0 +1,81 @@
+.bud-form-container {
+  display: flex;
+  justify-content: center;
+  font-family: "League Spartan", sans-serif;
+  align-items: center;
+  height: 80vh; /* Set the container height to 80vh */
+  background-color: #f9f9f9;
+  padding: 50px;
+}
+
+.bud-form {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px; /* Reduced padding for a slightly smaller form */
+  width: 550px; /* Reduced max-width */
+}
+
+.bud-form-title {
+  font-size: 1.6rem; /* Slightly smaller font size */
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+.bud-form-group {
+  margin-bottom: 15px;
+}
+
+.bud-form-group label {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.bud-icon {
+  margin-right: 8px;
+}
+
+.bud-form-group input,
+.bud-form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.bud-form-group textarea {
+  resize: none;
+}
+
+.bud-form-group input:focus,
+.bud-form-group textarea:focus {
+  outline: none;
+  border-color: #ffc107;
+  box-shadow: 0 0 5px rgba(255, 193, 7, 0.5);
+}
+
+.bud-submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ffc107;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bud-submit-button:hover {
+  background-color: #e0a800;
+}
+
+.bud-submit-button i {
+  margin-right: 5px;
+}
