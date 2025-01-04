@@ -12,7 +12,7 @@ app.use(cors({
 app.use(express.json());
 
 
-const GOOGLE_API_KEY = 'AIzaSyBpsEsyY3sxoFQ4ODuZd-jctmEbumF-HqM'; 
+const GOOGLE_API_KEY; 
 
 
 const genAI = new GoogleGenerativeAI(GOOGLE_API_KEY);
