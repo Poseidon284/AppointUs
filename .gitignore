@@ -10,6 +10,7 @@ lerna-debug.log*
 node_modules/
 frontend/node_modules/
 mainvenv
+fuzzy_dynamic_pricing
 **/__pycache__/
 dist
 dist-ssr

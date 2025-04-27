@@ -193,6 +193,7 @@ INSTALLED_APPS = [
     'Bookings',
     'Reviews',
     'Service',
+    'analytics',
     'Searchbar',
 ]
 
@@ -242,8 +243,19 @@ WSGI_APPLICATION = 'AppointUs.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgress',
+#         'USER': 'postgres',
+#         'PASSWORD': 'Radheshrantinum',
+#         'HOST': 'database-1.cqj46ueaap27.us-east-1.rds.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
+
 DATABASES = {
-    'default': {
+'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'AppointUs',
         'USER': 'postgres',

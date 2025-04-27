@@ -2,6 +2,7 @@ from django.db import models
 from Businesses.models import Business_User  
 from Service.models import Service
 from User.models import CommonUser
+from analytics.models import Event
 from django.contrib.auth.models import User
 
 class BookingStatus(models.TextChoices):
@@ -19,6 +20,7 @@ class Booking(models.Model):
     # service_name = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='booked_service') 
     business = models.ForeignKey(Business_User, on_delete=models.CASCADE, related_name='offered_by') 
     booking_user = models.ForeignKey(CommonUser,on_delete=models.CASCADE, related_name='booking_user')
+    event = models.ForeignKey(Event, related_name='booking', on_delete=models.CASCADE)
     booking_date = models.DateField()
     booking_time = models.TimeField()
     # price = models.DecimalField(max_digits=10, decimal_places=2)
