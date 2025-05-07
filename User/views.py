@@ -25,6 +25,20 @@ class LoginView(APIView):
             if user.is_active:
                 token, created = Token.objects.get_or_create(user=user)
 
+                # Check if user is a business user
+                try:
+                    business_user = Business_User.objects.get(user_business=user)
+                    is_business_user = True
+                    is_first_login = business_user.is_first_login
+
+                    # If it's their first login, mark it as done
+                    if is_first_login:
+                        business_user.is_first_login = False
+                        business_user.save()
+                except Business_User.DoesNotExist:
+                    is_business_user = False
+                    is_first_login = False
+
                 return JsonResponse(
                     {
                         "message": "Login successful",
@@ -32,14 +46,18 @@ class LoginView(APIView):
                         "user_id": user.id,
                         "username": user.username,
                         "email": user.email,
+                        "isBusinessUser": is_business_user,
+                        "isFirstLogin": is_first_login,
                     },
                     status=status.HTTP_200_OK,
                 )
+
             else:
                 return JsonResponse(
                     {"message": "This account is inactive."},
                     status=status.HTTP_403_FORBIDDEN,
                 )
+            
         else:
             return JsonResponse(
                 {"message": "Invalid email or password."},

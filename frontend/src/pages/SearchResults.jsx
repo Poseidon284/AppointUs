@@ -42,8 +42,7 @@ const SearchResults = () => {
                     Rating: ⭐ {result.Rating}
                   </p>
                   <p className="query-result-price-range">
-                    Price Range: ₹{result.PriceRange.MinPrice} - ₹
-                    {result.PriceRange.MaxPrice}
+                    Current Price: ₹{Math.floor((result.PriceRange.MinPrice+result.PriceRange.MaxPrice)/2)}
                   </p>
 
                   <p className="query-result-description">

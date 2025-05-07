@@ -19,6 +19,7 @@ class Business_User(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     slug = models.SlugField(default="", null=True)
+    is_first_login = models.BooleanField(default=True)
 
     class Meta:
         ordering = ['name']
