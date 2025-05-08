@@ -8,7 +8,7 @@ const Bookings = () => {
   const { loginDetails } = useContext(LoginContext); // Get login details from context
 
   const [formData, setFormData] = useState({
-    name: loginDetails?.name || "", 
+    name: loginDetails?.username || "", 
     location: "",
     phone: loginDetails?.phone || "", 
     query: "",
@@ -60,7 +60,7 @@ const Bookings = () => {
       );
       setResponseMessage("Thank you! Your booking has been submitted.");
       setFormData({
-        name: loginDetails?.name || "",
+        name: loginDetails?.username || "",
         location: "",
         phone: loginDetails?.phone || "",
         query: "",

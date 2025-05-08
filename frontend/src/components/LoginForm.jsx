@@ -25,13 +25,17 @@ const LoginForm = () => {
         "http://localhost:8000/api/login/",
         formData
       );
-      console.log("Login successful:", response.data);
+      const data = response.data;
 
-      console.log("Response Data: ", response.data);
-      setLoginDetails(response.data);
-      console.log("Updated Context Value: ", response.data);
-      // Navigate to the Bookings page
-      navigate("/selectuser");
+      console.log("Login successful:", data);
+      setLoginDetails(data);
+
+      // Redirect condition
+      if (data.isBusinessUser && !data.isFirstLogin) {
+        navigate("/serviceprovider");
+      } else {
+        navigate("/selectuser");
+      }
     } catch (error) {
       setErrorMessage(
         error.response?.data?.message || "Login failed. Please try again."
